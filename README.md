@@ -1,2 +1,2 @@
 # store-window-server
-This is my pet project which I used to learn how to write a microservices architecture.
+This is my pet project that I used to learn how to write a microservice architecture.
