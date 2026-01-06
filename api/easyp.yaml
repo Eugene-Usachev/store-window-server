@@ -1,0 +1,43 @@
+version: v1alpha
+
+deps:
+  - github.com/googleapis/googleapis
+  - github.com/envoyproxy/protoc-gen-validate
+
+lint:
+  use:
+    - BASIC
+
+generate:
+  inputs:
+    - directory:
+        path: "proto"
+        root: "."
+
+  plugins:
+    - name: go
+      out: .
+      opts:
+        module: api
+
+    - name: go-grpc
+      out: .
+      opts:
+        module: api
+        require_unimplemented_servers: false
+
+    - name: grpc-gateway
+      out: .
+      opts:
+        module: api
+
+    - name: go-http
+      out: .
+      opts:
+        module: api
+
+    - name: validate
+      out: .
+      opts:
+        lang: go
+        module: api

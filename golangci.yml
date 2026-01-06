@@ -1,0 +1,37 @@
+version: "2"
+
+linters:
+  disable:
+    - wrapcheck
+    - varnamelen
+    - perfsprint
+    - mnd
+    - nosprintfhostport
+    - nonamedreturns
+    - nakedret
+    - ireturn
+    - exhaustruct
+    - depguard
+    - funlen
+    - gocognit
+    - gochecknoglobals
+    - cyclop
+    - godox
+    - dupword
+    - nestif
+  enable-all: true
+
+formatters:
+  enable:
+    - gci
+    - gofmt
+    - gofumpt
+    - goimports
+    - golines
+    - swaggo
+issues:
+  max-issues-per-linter: 0
+
+run:
+  timeout: 1m
+  tests: false
